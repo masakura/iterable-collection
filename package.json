@@ -1,0 +1,33 @@
+{
+  "name": "iterable-collection",
+  "version": "0.5.0",
+  "description": "Collection utility for ES6 Symbol.iterator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masakura/iterable-collection.git"
+  },
+  "keywords": [
+    "iterable",
+    "collection",
+    "es6",
+    "utility"
+  ],
+  "author": "Tomo Masakura <tomo.masakura@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masakura/iterable-collection/issues"
+  },
+  "homepage": "https://github.com/masakura/iterable-collection#readme",
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^3.1.0",
+    "eslint-plugin-react": "^3.15.0"
+  },
+  "engines": {
+    "node": ">=4.2.4"
+  }
+}
