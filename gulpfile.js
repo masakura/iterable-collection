@@ -2,6 +2,7 @@
 
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
+const jasmine = require('gulp-jasmine');
 
 gulp.task('eslint', () => {
   return gulp.src([
@@ -12,4 +13,9 @@ gulp.task('eslint', () => {
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
+});
+
+gulp.task('jasmine', () => {
+  return gulp.src('spec/**/*.spec.js')
+    .pipe(jasmine());
 });
