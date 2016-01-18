@@ -1,7 +1,10 @@
 'use strict';
 
-function iterable(it) {
+function iterable_(it) {
   return {
+    [Symbol.iterator]() {
+      return it;
+    },
     * map() {
       const args = Array.from(arguments);
       for (const i of it) {
@@ -38,6 +41,30 @@ function iterable(it) {
       return false;
     },
   };
+}
+
+function wrap(it) {
+  const iter = iterable_(it);
+
+  return {
+    [Symbol.iterator]() {
+      return it;
+    },
+    map() {
+      const args = Array.from(arguments);
+      return wrap(iter.map.apply(it, args));
+    },
+    filter() {
+      const args = Array.from(arguments);
+      return wrap(iter.filter.apply(it, args));
+    },
+    every: iter.every.bind(iter),
+    some: iter.some.bind(iter),
+  };
+}
+
+function iterable(it) {
+  return wrap(it);
 }
 
 module.exports = iterable;

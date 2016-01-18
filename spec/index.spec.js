@@ -48,4 +48,15 @@ describe('index.js', () => {
       expect(result).toBeTruthy();
     });
   });
+
+  it('combine', () => {
+    const iter = iterable(range(0, 3));
+
+    const result = iter
+            .map(i => i * i)
+            .filter(i => i >= 4)
+            .some(i => i % 2);
+
+    expect(result).toBeTruthy();
+  });
 });
