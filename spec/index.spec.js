@@ -28,4 +28,24 @@ describe('index.js', () => {
       expect(Array.from(result)).toEqual([1]);
     });
   });
+
+  describe('every', () => {
+    it('0..2 all greater and equal 0', () => {
+      const iter = iterable(range(0, 2));
+
+      const result = iter.every(i => i >= 0);
+
+      expect(result).toBeTruthy();
+    });
+  });
+
+  describe('some', () => {
+    it('0..2 some greater than 1', () => {
+      const iter = iterable(range(0, 2));
+
+      const result = iter.some(i => i > 1);
+
+      expect(result).toBeTruthy();
+    });
+  });
 });
