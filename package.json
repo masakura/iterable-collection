@@ -4,7 +4,7 @@
   "description": "Collection utility for ES6 Symbol.iterator.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",

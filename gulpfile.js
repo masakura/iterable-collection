@@ -19,3 +19,8 @@ gulp.task('jasmine', () => {
   return gulp.src('spec/**/*.spec.js')
     .pipe(jasmine());
 });
+
+gulp.task('lint', ['eslint'], () => {});
+gulp.task('test', ['jasmine'], () => {});
+
+gulp.task('default', ['lint', 'test'], () => {});
